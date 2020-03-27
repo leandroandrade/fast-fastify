@@ -1,0 +1,21 @@
+{
+  "name": "fast-fastify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^2.13.0",
+    "fastify-mongodb": "^2.0.0",
+    "fastify-plugin": "^1.6.1",
+    "mongodb": "^3.5.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
