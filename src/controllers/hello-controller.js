@@ -3,8 +3,7 @@
 exports.hello = async (request, reply, options) => {
     const { commons } = options;
 
-    const upper = commons.myUpperCase('world');
-    const lower = commons.myLowerCase('LOWER');
+    const world = commons.myUpperCase('world');
 
-    reply.send({ hello: upper, lower });
+    reply.send({ hello: world });
 };
