@@ -1,16 +1,22 @@
 'use strict';
 
 const supertest = require('supertest');
+// const { MongoMemoryServer } = require('mongodb-memory-server');
+
+// const mongoServer = new MongoMemoryServer();
 const fastify = require('../../src/app');
 
 describe('Exemplo', () => {
 
     beforeAll(async () => {
+        // process.env.MONGODB_URI = await mongoServer.getUri();
+
         await fastify.ready();
     });
 
-    afterAll(() => {
-        fastify.close();
+    afterAll(async () => {
+        await fastify.close();
+        // await mongoServer.stop();
     });
 
 
