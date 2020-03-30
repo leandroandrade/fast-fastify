@@ -1,5 +1,7 @@
 'use strict';
 
+const { MONGODB_URL } = process.env;
+
 const fastify = require('fastify')({
     logger: true
 });
@@ -9,7 +11,11 @@ const fastify = require('fastify')({
 //     useUnifiedTopology: true
 // });
 
-fastify.register(require('fastify-mongodb'), { url: 'mongodb://localhost:27017/', name: 'mongo', forceClose: true });
+fastify.register(require('fastify-mongodb'), {
+    url: MONGODB_URL || 'mongodb://localhost:27017/',
+    name: 'mongo',
+    forceClose: true
+});
 
 fastify.register(require('./commons'));
 fastify.register(require('./routes'), { prefix: 'api' });
