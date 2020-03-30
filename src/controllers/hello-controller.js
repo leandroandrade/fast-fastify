@@ -1,10 +1,10 @@
 'use strict';
 
-exports.hello = async (req, res, options) => {
+exports.hello = async (request, reply, options) => {
     const { commons } = options;
 
     const upper = commons.myUpperCase('world');
     const lower = commons.myLowerCase('LOWER');
 
-    return { hello: upper, lower }
+    reply.send({ hello: upper, lower });
 };

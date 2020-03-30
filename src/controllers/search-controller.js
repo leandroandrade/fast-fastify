@@ -1,9 +1,9 @@
 'use strict';
 
-exports.search = async (req, res, options) => {
-    const { log } = req;
+exports.search = async (request, reply, options) => {
+    const { log } = request;
     const { db } = options;
-    const { id } = req.params;
+    const { id } = request.params;
 
     log.info(`> SEARCH_CONTROLLER: searching ${ id }`);
 
@@ -11,5 +11,5 @@ exports.search = async (req, res, options) => {
     if (!result) {
         throw new Error('Invalid value')
     }
-    return result
+    reply.send(result);
 };

@@ -1,9 +1,9 @@
 'use strict';
 
-exports.post = async (req, res, options) => {
-    const { body } = req;
+exports.post = async (request, reply, options) => {
+    const { body } = request;
 
     body['time'] = Date.now();
 
-    res.send(body);
+    reply.send(body);
 };
